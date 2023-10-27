@@ -1,8 +1,6 @@
 <?php
-require "./connectdatabase/connect.php"
+require "../../connectdatabase/connect.php"
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,29 +9,26 @@ require "./connectdatabase/connect.php"
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dreamland</title>
-  <link rel="stylesheet" href="./component/featured.css/featured.css" />
-  <link rel="stylesheet" href="./component/featured.css/bannercss.css">
+  <link rel="stylesheet" href="../component/featured.css/featured.css" />
+  <link rel="stylesheet" href="../component/featured.css/bannercss.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 </head>
 
 <body>
   <!--navber-->
-  <nav class="bg-white fixed w-full z-20 top-0 left-0">
+  <nav class="bg-white  w-full z-20 top-0 left-0">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center">
-        <img src="./assets/images/logo.png" class="h-8 mr-3" alt=" Logo" />
+        <img src="../../assets/images/logo.png" class="h-8 mr-3" alt=" Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap"><span
             class="text-indigo-950">DREAM</span><span class="text-indigo-800">LAND</span></span>
       </a>
       <div class="flex md:order-2">
 
         <div>
-          <a href="./component/php/login.php"  class='hover:text-violet-600  max-md:hidden mr-3'>
-            <span  class='border-2 rounded-full px-1 pb-1 font-bold   bg-violet-600 border-violet-600 mr-2 text-white'>+</span> 
-            Add New Property </a>
-
-            <a href="./component/php/login.php" class="text-indigo-800 hover:text-white border-2 border-indigo-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-indigo-800">
-              sign in
+          <a href="#"  class='hover:text-violet-600  max-md:hidden mr-3'>
+            <a href="../index.php" class="text-indigo-800 hover:text-white border-2 border-indigo-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-indigo-800">
+              sign out
 
             </a>
         </div>
@@ -54,7 +49,7 @@ require "./connectdatabase/connect.php"
         <ul
           class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white text-gray-300">
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent text-indigo-800 md:p-0 0"
+            <a href="../indexlogin.php" class="block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent text-indigo-800 md:p-0 0"
               aria-current="page">Home</a>
           </li>
           <li>
@@ -70,39 +65,6 @@ require "./connectdatabase/connect.php"
       </div>
     </div>
   </nav>
-
-  <!--banner-->
-  <div class="mt-10 ">
-    <div class="banner  flex items-center">
-      <div class="bgcontain  h-full px-2 md:px-6">
-        <h1 class="md:text-5xl text-2xl font-extrabold  mb-5">
-          <span class=" text-indigo-950 md:ml-10">Find Your Best Dream House for Rental, <br></span>
-          <span class="text-indigo-800 md:ml-10"> Buy & Sell...</span>
-        </h1>
-        <p class="md:text-2xl text-gray-600 font-medium md:ml-10 mb-5">
-          Properties for buy / 
-          rent in in your location. We have more than 3000+ <br> listings for you to choose
-        </p>
-        <div class="search  flex flex-col lg:flex-row justify-center gap-4">
-          <input type="text" name="Location" placeholder=" Enter Address" id="">
-          <input type="text" name="khatian" placeholder=" khatian number " id="">
-          <input type="number" name="maxprice" placeholder="Max Price" id="">
-          <input type="number" name="minprice" placeholder="minprice Price" id="">
-          <input type="submit" class="items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none" value="Search">
-  
-  
-        </div>
-
-      </div>
-
-
-  
-    </div>
-  
-    
-  
-  </div>
-
 
   <!--featured-->
 
@@ -122,22 +84,18 @@ require "./connectdatabase/connect.php"
 
       <?php
       $allproparty=mysqli_query($connect,"select * from  propartyinfo");
-      $couterofimg=0;
+  
 
       while($row=mysqli_fetch_array($allproparty))
       {
-        if($couterofimg==9)
-        {
-          break;
-        }
-        $couterofimg+=1;
+      
 
       ?>
 
       <div class="item_main w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-        <a href="#">
+        <a href="./allproparty.php?propartyid=<?php echo $row['id']; ?>">
           <div class="item_img">
-            <img class="rounded-t-lg h-96 w-full" src="assets/images/<?php echo $row["image"] ?>" alt="product image" />
+            <img class="rounded-t-lg h-96 w-full" src="../../assets/images/<?php echo $row["image"] ?>" alt="product image" />
           </div>
         </a>
         <div class="px-5 pb-5">
@@ -174,7 +132,7 @@ require "./connectdatabase/connect.php"
               (60 Reviews)
             </span>
           </div>
-          <a href="#">
+          <a href="./allproparty.php?propartyid=<?php echo $row['id']; ?>">
             <h2 class="text-2xl font-extrabold tracking-tight text-indigo-950">
             <?php echo $row["type"] ?>
             </h2>
@@ -219,56 +177,9 @@ require "./connectdatabase/connect.php"
     </div>
   </div>
 
-  <!--Sell and buy -->
-  <div class="mt-8">
-    <div class="lg:container lg:mx-auto md:px-4  flex gap-4 lg:gap-y-8 flex-wrap justify-center mb-8 ">
-      <div class="max-w-sm  bg-indigo-100 rounded-lg shadow  ">
-        <a href="#">
-          <div class="item_img">
-            <img class="rounded-t-lg h-96 w-full" src="assets/images/buy.png" alt="product image" />
-          </div>
-        </a>
-        <div class="p-6">
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            "Invest in Your Future, Unlock the Door to Homeownership, and Make Your Dreams a Reality."
-          </p>
-          <a href="./component/php/login.php"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none">
-            Sell a Proparty
-            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-          </a>
-        </div>
-    
-      </div>
-      <div class="max-w-sm  bg-indigo-100 rounded-lg shadow">
-        <a href="#">
-          <div class="item_img">
-            <img class="rounded-t-lg h-96 w-full" src="assets/images/sell.png" alt="product image" />
-          </div>
-        </a>
-        <div class="p-6">
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            "Secure Your Future: Invest in Property, Build Wealth, and Find Comfort and Security in Your Own Space."
-          </p>
-          <a href="./component/php/login.php"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none">
-            Buy a Proparty
-            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-          </a>
-        </div>
-    
-      </div>
 
-    </div>
-  </div>
+  
+
 
   <!--footer-->
   <div>
@@ -405,8 +316,6 @@ require "./connectdatabase/connect.php"
       </div>
     </footer>
   </div>
-
-
 
   <script src="https://cdn.tailwindcss.com"></script>
 </body>

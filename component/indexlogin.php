@@ -1,7 +1,6 @@
 <?php
-require "./connectdatabase/connect.php"
+require "../connectdatabase/connect.php"
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +10,8 @@ require "./connectdatabase/connect.php"
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dreamland</title>
-  <link rel="stylesheet" href="./component/featured.css/featured.css" />
-  <link rel="stylesheet" href="./component/featured.css/bannercss.css">
+  <link rel="stylesheet" href="../component/featured.css/featured.css" />
+  <link rel="stylesheet" href="../component/featured.css/bannercss.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 </head>
 
@@ -21,19 +20,19 @@ require "./connectdatabase/connect.php"
   <nav class="bg-white fixed w-full z-20 top-0 left-0">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center">
-        <img src="./assets/images/logo.png" class="h-8 mr-3" alt=" Logo" />
+        <img src="../assets/images/logo.png" class="h-8 mr-3" alt=" Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap"><span
             class="text-indigo-950">DREAM</span><span class="text-indigo-800">LAND</span></span>
       </a>
       <div class="flex md:order-2">
 
         <div>
-          <a href="./component/php/login.php"  class='hover:text-violet-600  max-md:hidden mr-3'>
+          <a href="#"  class='hover:text-violet-600  max-md:hidden mr-3'>
             <span  class='border-2 rounded-full px-1 pb-1 font-bold   bg-violet-600 border-violet-600 mr-2 text-white'>+</span> 
             Add New Property </a>
 
-            <a href="./component/php/login.php" class="text-indigo-800 hover:text-white border-2 border-indigo-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-indigo-800">
-              sign in
+            <a href="../index.php" class="text-indigo-800 hover:text-white border-2 border-indigo-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-indigo-800">
+              sign out
 
             </a>
         </div>
@@ -105,7 +104,6 @@ require "./connectdatabase/connect.php"
 
 
   <!--featured-->
-
   <div class="bg-indigo-50 p-4 pt-5 pb-5">
     <div class="lg:container lg:mx-auto md:px-4 flex gap-4 lg:gap-y-8 flex-wrap justify-center mb-8">
       <div class="container">
@@ -137,7 +135,7 @@ require "./connectdatabase/connect.php"
       <div class="item_main w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
         <a href="#">
           <div class="item_img">
-            <img class="rounded-t-lg h-96 w-full" src="assets/images/<?php echo $row["image"] ?>" alt="product image" />
+            <img class="rounded-t-lg h-96 w-full" src="../assets/images/<?php echo $row["image"] ?>" alt="product image" />
           </div>
         </a>
         <div class="px-5 pb-5">
@@ -211,13 +209,15 @@ require "./connectdatabase/connect.php"
 
 
       <div class="container flex justify-center mt-10">
-        <button
+      <a href="./php/allproparty.php"
           class="hover:bg-white hover:text-indigo-800 bg-indigo-800 font-bold rounded-lg text-white border-2 px-5 py-4">
           View All Properties
-        </button>
+    </a>
       </div>
     </div>
   </div>
+
+
 
   <!--Sell and buy -->
   <div class="mt-8">
@@ -225,14 +225,14 @@ require "./connectdatabase/connect.php"
       <div class="max-w-sm  bg-indigo-100 rounded-lg shadow  ">
         <a href="#">
           <div class="item_img">
-            <img class="rounded-t-lg h-96 w-full" src="assets/images/buy.png" alt="product image" />
+            <img class="rounded-t-lg h-96 w-full" src="../assets/images/buy.png" alt="product image" />
           </div>
         </a>
         <div class="p-6">
           <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
             "Invest in Your Future, Unlock the Door to Homeownership, and Make Your Dreams a Reality."
           </p>
-          <a href="./component/php/login.php"
+          <a href="./php/addproparty.php"
             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none">
             Sell a Proparty
             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -247,14 +247,14 @@ require "./connectdatabase/connect.php"
       <div class="max-w-sm  bg-indigo-100 rounded-lg shadow">
         <a href="#">
           <div class="item_img">
-            <img class="rounded-t-lg h-96 w-full" src="assets/images/sell.png" alt="product image" />
+            <img class="rounded-t-lg h-96 w-full" src="../assets/images/sell.png" alt="product image" />
           </div>
         </a>
         <div class="p-6">
           <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
             "Secure Your Future: Invest in Property, Build Wealth, and Find Comfort and Security in Your Own Space."
           </p>
-          <a href="./component/php/login.php"
+          <a href="./php/allproparty.php"
             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none">
             Buy a Proparty
             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -405,8 +405,6 @@ require "./connectdatabase/connect.php"
       </div>
     </footer>
   </div>
-
-
 
   <script src="https://cdn.tailwindcss.com"></script>
 </body>

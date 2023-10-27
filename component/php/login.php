@@ -1,3 +1,39 @@
+<?php
+require "../../connectdatabase/connect.php";
+if(isset($_POST["submit"])){
+
+    $useremail = $_POST["email"];
+    $userpassword = $_POST["password"];
+    $x=0;
+  
+
+    $user=mysqli_query($connect,"select * from  registration");
+   
+    while($row=mysqli_fetch_array($user))
+    {
+        if($row["email"] == $useremail && $row["password"]==$userpassword)
+        {
+            $x=0;
+            header('Location:../indexlogin.php');
+            
+
+        }
+        else{
+            $x=1;
+        }
+
+    }
+    if($x==1)
+    {
+        $error1="please try again";
+    }
+   
+
+   
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +50,7 @@
             <img src="../../assets/images/logo.png" alt="Logo.png" />
         </div>
         <p class="font-semibold text-3xl mb-14">Hey There!!! Welcome Back.</p>
-        <form>
+        <form action="" method="post">
             <div class="mb-4">
                 <label  for="email" class="block text-black mb-2">
                     Email
@@ -43,13 +79,14 @@
                     Remember Me
                 </label>
             </div>
-
+            <div class="text-red-800 font-bold"><?php echo isset($error1)?$error1:""?></div>
             <div>
-                <button type="submit"
-                    class="px-4 py-3 w-full bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    Sign In
-                </button>
-            </div>
+           
+
+           <input type="submit" value="Sign up" name="submit" class="px-4 py-3 w-full bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          
+       </div>
+
             <div class="my-5 text-gray-500 text-center">
                 <p>Or, Sign in with your email</p>
             </div>
