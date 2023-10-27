@@ -1,0 +1,30 @@
+.item_img{
+ overflow: hidden;
+}
+.item_img img{
+    transition: all 1.5s ease;
+
+}
+.item_main:hover img{
+    transform: scale(1.5);
+}
+
+.secline1{
+    width: 20px;
+    height: 6px;
+    border: 2px solid #1e1b4b;
+    background-color: #1e1b4b;
+    border-radius: 30px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.secline2{
+    width: 46px;
+    height: 6px;
+    border: 2px solid #1e1b4b;
+    background-color: #1e1b4b;
+    border-radius: 30px;
+    display: inline-block;
+   
+
+}

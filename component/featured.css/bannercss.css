@@ -1,0 +1,6 @@
+.banner{
+    min-height: 80vh;
+    background:url(../../assets/images/br.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
