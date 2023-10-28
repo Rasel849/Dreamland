@@ -9,8 +9,8 @@ require "../../connectdatabase/connect.php"
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dreamland</title>
-  <link rel="stylesheet" href="../component/featured.css/featured.css" />
-  <link rel="stylesheet" href="../component/featured.css/bannercss.css">
+  <link rel="stylesheet" href="../featured.css/bannercss.css" />
+  <link rel="stylesheet" href="../featured.css/bannercss.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 </head>
 
@@ -26,8 +26,8 @@ require "../../connectdatabase/connect.php"
       <div class="flex md:order-2">
 
         <div>
-          <a href="#"  class='hover:text-violet-600  max-md:hidden mr-3'>
-            <a href="../index.php" class="text-indigo-800 hover:text-white border-2 border-indigo-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-indigo-800">
+          <a href="../../index.php"  class='hover:text-violet-600  max-md:hidden mr-3'>
+            <a href="../../index.php" class="text-indigo-800 hover:text-white border-2 border-indigo-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-indigo-800">
               sign out
 
             </a>
@@ -93,7 +93,7 @@ require "../../connectdatabase/connect.php"
       ?>
 
       <div class="item_main w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-        <a href="./allproparty.php?propartyid=<?php echo $row['id']; ?>">
+      <a href="./product.php?propartyid=<?php echo $row['id']; ?>">
           <div class="item_img">
             <img class="rounded-t-lg h-96 w-full" src="../../assets/images/<?php echo $row["image"] ?>" alt="product image" />
           </div>
@@ -132,7 +132,9 @@ require "../../connectdatabase/connect.php"
               (60 Reviews)
             </span>
           </div>
-          <a href="./allproparty.php?propartyid=<?php echo $row['id']; ?>">
+        
+          <a href="./product.php?propartyid=<?php echo $row['id']; ?>">
+
             <h2 class="text-2xl font-extrabold tracking-tight text-indigo-950">
             <?php echo $row["type"] ?>
             </h2>

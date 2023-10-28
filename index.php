@@ -135,7 +135,7 @@ require "./connectdatabase/connect.php"
       ?>
 
       <div class="item_main w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-        <a href="#">
+        <a href="./component/php/login.php">
           <div class="item_img">
             <img class="rounded-t-lg h-96 w-full" src="assets/images/<?php echo $row["image"] ?>" alt="product image" />
           </div>
@@ -174,7 +174,7 @@ require "./connectdatabase/connect.php"
               (60 Reviews)
             </span>
           </div>
-          <a href="#">
+          <a href="./component/php/login.php">
             <h2 class="text-2xl font-extrabold tracking-tight text-indigo-950">
             <?php echo $row["type"] ?>
             </h2>
@@ -208,13 +208,14 @@ require "./connectdatabase/connect.php"
 
 
       ?>
+      
 
 
       <div class="container flex justify-center mt-10">
-        <button
-          class="hover:bg-white hover:text-indigo-800 bg-indigo-800 font-bold rounded-lg text-white border-2 px-5 py-4">
-          View All Properties
-        </button>
+
+        <a href="./component/php/login.php"
+          class="hover:bg-white hover:text-indigo-800 bg-indigo-800 font-bold rounded-lg text-white border-2 px-5 py-4"> View All Properties
+        </a>
       </div>
     </div>
   </div>

@@ -1,5 +1,9 @@
 <?php
-require "../connectdatabase/connect.php"
+require "../connectdatabase/connect.php";
+if(isset($_POST["submit"])){
+header('Location:./php/allproparty.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +31,7 @@ require "../connectdatabase/connect.php"
       <div class="flex md:order-2">
 
         <div>
-          <a href="#"  class='hover:text-violet-600  max-md:hidden mr-3'>
+          <a href="./php/addproparty.php"  class='hover:text-violet-600  max-md:hidden mr-3'>
             <span  class='border-2 rounded-full px-1 pb-1 font-bold   bg-violet-600 border-violet-600 mr-2 text-white'>+</span> 
             Add New Property </a>
 
@@ -82,15 +86,20 @@ require "../connectdatabase/connect.php"
           Properties for buy / 
           rent in in your location. We have more than 3000+ <br> listings for you to choose
         </p>
-        <div class="search  flex flex-col lg:flex-row justify-center gap-4">
-          <input type="text" name="Location" placeholder=" Enter Address" id="">
-          <input type="text" name="khatian" placeholder=" khatian number " id="">
-          <input type="number" name="maxprice" placeholder="Max Price" id="">
-          <input type="number" name="minprice" placeholder="minprice Price" id="">
-          <input type="submit" class="items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none" value="Search">
-  
-  
-        </div>
+
+        <form action="" method="post">
+          <div class="search  flex flex-col lg:flex-row justify-center gap-4">
+            <input type="text" name="Location" placeholder=" Enter Address" id="">
+            <input type="text" name="khatian" placeholder=" khatian number " id="">
+            <input type="number" name="maxprice" placeholder="Max Price" id="">
+            <input type="number" name="minprice" placeholder="minprice Price" id="">
+            <input type="submit" name="submit" class="items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded-lg hover:bg-white border-2 border-indigo-800 hover:text-indigo-800 focus:ring-4 focus:outline-none" value="Search">
+    
+    
+          </div>
+
+        </form>
+
 
       </div>
 
@@ -133,7 +142,7 @@ require "../connectdatabase/connect.php"
       ?>
 
       <div class="item_main w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-        <a href="#">
+        <a href="./php/product.php?propartyid=<?php echo $row['id']; ?>">
           <div class="item_img">
             <img class="rounded-t-lg h-96 w-full" src="../assets/images/<?php echo $row["image"] ?>" alt="product image" />
           </div>
@@ -172,7 +181,7 @@ require "../connectdatabase/connect.php"
               (60 Reviews)
             </span>
           </div>
-          <a href="#">
+          <a href="./php/product.php?propartyid=<?php echo $row['id']; ?>">
             <h2 class="text-2xl font-extrabold tracking-tight text-indigo-950">
             <?php echo $row["type"] ?>
             </h2>
